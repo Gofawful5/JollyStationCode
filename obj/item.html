@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <base href="../" />
+    <link rel="stylesheet" href="dmdoc.css" />
+    <title>&#x2F;obj&#x2F;item - </title>
+</head>
+<body>
+<header>
+    <a href="index.html"></a> -
+    <a href="index.html#modules">Modules</a> -
+    <a href="index.html#types">Types</a>
+ &mdash; <a href="obj/item.html#proc">Proc Details</a></header>
+<main>
+<h1>item <aside>/<a href="obj.html">obj</a>/<a href="obj/item.html">item</a></aside>
+        
+    
+            <a href="https://github.com/Gofawful5/TopiaStationCode/blob/bc34a1fb5f3456f2d3c5f96dfb060eb6309267e6/code/_onclick/adjacent.dm#L79">
+        <img src="git.png" width="16" height="16" title="code&#x2F;_onclick&#x2F;adjacent.dm 79"/></a></h1>
+
+<table class="summary" cellspacing="0"><tr><td colspan="2"><h2>Procs</h2></td></tr>
+            <tr><th><a href="obj/item.html#proc/afterattack">afterattack</a></th><td>Last proc in the <a href="obj/item.html#proc/melee_attack_chain" title="/obj/item">/obj/item/proc/melee_attack_chain</a></td></tr>
+            <tr><th><a href="obj/item.html#proc/afterattack_secondary">afterattack_secondary</a></th><td>Called at the end of the attack chain if the user right-clicked.</td></tr>
+            <tr><th><a href="obj/item.html#proc/attack">attack</a></th><td>Called from [/mob/living/proc/attackby]</td></tr>
+            <tr><th><a href="obj/item.html#proc/attack_atom">attack_atom</a></th><td>The equivalent of the standard version of <a href="obj/item.html#proc/attack" title="/obj/item">/obj/item/proc/attack</a> but for non mob targets.</td></tr>
+            <tr><th><a href="obj/item.html#proc/attack_qdeleted">attack_qdeleted</a></th><td>Called if the target gets deleted by our attack</td></tr>
+            <tr><th><a href="obj/item.html#proc/attack_secondary">attack_secondary</a></th><td>The equivalent of <a href="obj/item.html#proc/attack" title="/obj/item">/obj/item/proc/attack</a> but for alternate attacks, AKA right clicking</td></tr>
+            <tr><th><a href="obj/item.html#proc/attack_self">attack_self</a></th><td>Called when the item is in the active hand, and clicked; alternately, there is an 'activate held object' verb or you can hit pagedown.</td></tr>
+            <tr><th><a href="obj/item.html#proc/attack_self_secondary">attack_self_secondary</a></th><td>Called when the item is in the active hand, and right-clicked. Intended for alternate or opposite functions, such as lowering reagent transfer amount. At the moment, there is no verb or hotkey.</td></tr>
+            <tr><th><a href="obj/item.html#proc/melee_attack_chain">melee_attack_chain</a></th><td>This is the proc that handles the order of an item_attack.</td></tr>
+            <tr><th><a href="obj/item.html#proc/pre_attack">pre_attack</a></th><td>Called on the item before it hits something</td></tr>
+            <tr><th><a href="obj/item.html#proc/pre_attack_secondary">pre_attack_secondary</a></th><td>Called on the item before it hits something, when right clicking.</td></tr></table><h2 id="proc">Proc Details</h2><h3 id="proc/afterattack"><aside class="declaration">proc </aside>afterattack<aside>(/<a href="atom.html">atom</a>/target, /<a href="mob.html">mob</a>/user, proximity_flag, click_parameters) 
+        
+    
+            <a href="https://github.com/Gofawful5/TopiaStationCode/blob/bc34a1fb5f3456f2d3c5f96dfb060eb6309267e6/code/_onclick/item_attack.dm#L281">
+        <img src="git.png" width="16" height="16" title="code&#x2F;_onclick&#x2F;item_attack.dm 281"/></a></aside>
+        </h3>
+        <p>Last proc in the <a href="obj/item.html#proc/melee_attack_chain" title="/obj/item">/obj/item/proc/melee_attack_chain</a></p>
+<p>Arguments:</p>
+<ul>
+<li>atom/target - The thing that was hit</li>
+<li>mob/user - The mob doing the hitting</li>
+<li>proximity_flag - is 1 if this afterattack was called on something adjacent, in your square, or on your person.</li>
+<li>click_parameters - is the params string from byond <a href="atom.html#proc/Click" title="/atom">/atom/proc/Click</a> code, see that documentation.</li>
+</ul><h3 id="proc/afterattack_secondary"><aside class="declaration">proc </aside>afterattack_secondary<aside>(/<a href="atom.html">atom</a>/target, /<a href="mob.html">mob</a>/user, proximity_flag, click_parameters) 
+        
+    
+            <a href="https://github.com/Gofawful5/TopiaStationCode/blob/bc34a1fb5f3456f2d3c5f96dfb060eb6309267e6/code/_onclick/item_attack.dm#L294">
+        <img src="git.png" width="16" height="16" title="code&#x2F;_onclick&#x2F;item_attack.dm 294"/></a></aside>
+        </h3>
+        <p>Called at the end of the attack chain if the user right-clicked.</p>
+<p>Arguments:</p>
+<ul>
+<li>atom/target - The thing that was hit</li>
+<li>mob/user - The mob doing the hitting</li>
+<li>proximity_flag - is 1 if this afterattack was called on something adjacent, in your square, or on your person.</li>
+<li>click_parameters - is the params string from byond <a href="atom.html#proc/Click" title="/atom">/atom/proc/Click</a> code, see that documentation.</li>
+</ul><h3 id="proc/attack"><aside class="declaration">proc </aside>attack<aside>(/<a href="mob.html">mob</a>/<a href="mob/living.html">living</a>/M, /<a href="mob.html">mob</a>/<a href="mob/living.html">living</a>/user, params) 
+        
+    
+            <a href="https://github.com/Gofawful5/TopiaStationCode/blob/bc34a1fb5f3456f2d3c5f96dfb060eb6309267e6/code/_onclick/item_attack.dm#L173">
+        <img src="git.png" width="16" height="16" title="code&#x2F;_onclick&#x2F;item_attack.dm 173"/></a></aside>
+        </h3>
+        <p>Called from [/mob/living/proc/attackby]</p>
+<p>Arguments:</p>
+<ul>
+<li>mob/living/M - The mob being hit by this item</li>
+<li>mob/living/user - The mob hitting with this item</li>
+<li>params - Click params of this attack</li>
+</ul><h3 id="proc/attack_atom"><aside class="declaration">proc </aside>attack_atom<aside>(/<a href="atom.html">atom</a>/attacked_atom, /<a href="mob.html">mob</a>/<a href="mob/living.html">living</a>/user, params) 
+        
+    
+            <a href="https://github.com/Gofawful5/TopiaStationCode/blob/bc34a1fb5f3456f2d3c5f96dfb060eb6309267e6/code/_onclick/item_attack.dm#L219">
+        <img src="git.png" width="16" height="16" title="code&#x2F;_onclick&#x2F;item_attack.dm 219"/></a></aside>
+        </h3>
+        <p>The equivalent of the standard version of <a href="obj/item.html#proc/attack" title="/obj/item">/obj/item/proc/attack</a> but for non mob targets.</p><h3 id="proc/attack_qdeleted"><aside class="declaration">proc </aside>attack_qdeleted<aside>(/<a href="atom.html">atom</a>/target, /<a href="mob.html">mob</a>/user, proximity_flag, click_parameters) 
+        
+    
+            <a href="https://github.com/Gofawful5/TopiaStationCode/blob/bc34a1fb5f3456f2d3c5f96dfb060eb6309267e6/code/_onclick/item_attack.dm#L307">
+        <img src="git.png" width="16" height="16" title="code&#x2F;_onclick&#x2F;item_attack.dm 307"/></a></aside>
+        </h3>
+        <p>Called if the target gets deleted by our attack</p><h3 id="proc/attack_secondary"><aside class="declaration">proc </aside>attack_secondary<aside>(/<a href="mob.html">mob</a>/<a href="mob/living.html">living</a>/victim, /<a href="mob.html">mob</a>/<a href="mob/living.html">living</a>/user, params) 
+        
+    
+            <a href="https://github.com/Gofawful5/TopiaStationCode/blob/bc34a1fb5f3456f2d3c5f96dfb060eb6309267e6/code/_onclick/item_attack.dm#L207">
+        <img src="git.png" width="16" height="16" title="code&#x2F;_onclick&#x2F;item_attack.dm 207"/></a></aside>
+        </h3>
+        <p>The equivalent of <a href="obj/item.html#proc/attack" title="/obj/item">/obj/item/proc/attack</a> but for alternate attacks, AKA right clicking</p><h3 id="proc/attack_self"><aside class="declaration">proc </aside>attack_self<aside>(/<a href="mob.html">mob</a>/user, modifiers) 
+        
+    
+            <a href="https://github.com/Gofawful5/TopiaStationCode/blob/bc34a1fb5f3456f2d3c5f96dfb060eb6309267e6/code/_onclick/item_attack.dm#L65">
+        <img src="git.png" width="16" height="16" title="code&#x2F;_onclick&#x2F;item_attack.dm 65"/></a></aside>
+        </h3>
+        <p>Called when the item is in the active hand, and clicked; alternately, there is an 'activate held object' verb or you can hit pagedown.</p><h3 id="proc/attack_self_secondary"><aside class="declaration">proc </aside>attack_self_secondary<aside>(/<a href="mob.html">mob</a>/user, modifiers) 
+        
+    
+            <a href="https://github.com/Gofawful5/TopiaStationCode/blob/bc34a1fb5f3456f2d3c5f96dfb060eb6309267e6/code/_onclick/item_attack.dm#L71">
+        <img src="git.png" width="16" height="16" title="code&#x2F;_onclick&#x2F;item_attack.dm 71"/></a></aside>
+        </h3>
+        <p>Called when the item is in the active hand, and right-clicked. Intended for alternate or opposite functions, such as lowering reagent transfer amount. At the moment, there is no verb or hotkey.</p><h3 id="proc/melee_attack_chain"><aside class="declaration">proc </aside>melee_attack_chain<aside>(/<a href="mob.html">mob</a>/user, /<a href="atom.html">atom</a>/target, params) 
+        
+    
+            <a href="https://github.com/Gofawful5/TopiaStationCode/blob/bc34a1fb5f3456f2d3c5f96dfb060eb6309267e6/code/_onclick/item_attack.dm#L10">
+        <img src="git.png" width="16" height="16" title="code&#x2F;_onclick&#x2F;item_attack.dm 10"/></a></aside>
+        </h3>
+        <p>This is the proc that handles the order of an item_attack.</p>
+<p>The order of procs called is:</p>
+<ul>
+<li><a href="atom.html#proc/tool_act" title="/atom">/atom/proc/tool_act</a> on the target. If it returns TOOL_ACT_TOOLTYPE_SUCCESS or TOOL_ACT_SIGNAL_BLOCKING, the chain will be stopped.</li>
+<li><a href="obj/item.html#proc/pre_attack" title="/obj/item">/obj/item/proc/pre_attack</a> on src. If this returns TRUE, the chain will be stopped.</li>
+<li><a href="atom.html#proc/attackby" title="/atom">/atom/proc/attackby</a> on the target. If it returns TRUE, the chain will be stopped.</li>
+<li><a href="obj/item.html#proc/afterattack" title="/obj/item">/obj/item/proc/afterattack</a>. The return value does not matter.</li>
+</ul><h3 id="proc/pre_attack"><aside class="declaration">proc </aside>pre_attack<aside>(/<a href="atom.html">atom</a>/A, /<a href="mob.html">mob</a>/<a href="mob/living.html">living</a>/user, params) 
+        
+    
+            <a href="https://github.com/Gofawful5/TopiaStationCode/blob/bc34a1fb5f3456f2d3c5f96dfb060eb6309267e6/code/_onclick/item_attack.dm#L85">
+        <img src="git.png" width="16" height="16" title="code&#x2F;_onclick&#x2F;item_attack.dm 85"/></a></aside>
+        </h3>
+        <p>Called on the item before it hits something</p>
+<p>Arguments:</p>
+<ul>
+<li>atom/A - The atom about to be hit</li>
+<li>mob/living/user - The mob doing the htting</li>
+<li>params - click params such as alt/shift etc</li>
+</ul>
+<p>See: <a href="obj/item.html#proc/melee_attack_chain" title="/obj/item">/obj/item/proc/melee_attack_chain</a></p><h3 id="proc/pre_attack_secondary"><aside class="declaration">proc </aside>pre_attack_secondary<aside>(/<a href="atom.html">atom</a>/target, /<a href="mob.html">mob</a>/<a href="mob/living.html">living</a>/user, params) 
+        
+    
+            <a href="https://github.com/Gofawful5/TopiaStationCode/blob/bc34a1fb5f3456f2d3c5f96dfb060eb6309267e6/code/_onclick/item_attack.dm#L100">
+        <img src="git.png" width="16" height="16" title="code&#x2F;_onclick&#x2F;item_attack.dm 100"/></a></aside>
+        </h3>
+        <p>Called on the item before it hits something, when right clicking.</p>
+<p>Arguments:</p>
+<ul>
+<li>atom/target - The atom about to be hit</li>
+<li>mob/living/user - The mob doing the htting</li>
+<li>params - click params such as alt/shift etc</li>
+</ul>
+<p>See: <a href="obj/item.html#proc/melee_attack_chain" title="/obj/item">/obj/item/proc/melee_attack_chain</a></p></main>
+<footer>
+    maplestation.dme
+    <a href="https://github.com/Gofawful5/TopiaStationCode/tree/bc34a1fb5f3456f2d3c5f96dfb060eb6309267e6">bc34a1f</a>
+        (master) &mdash; <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/src/dmdoc/README.md">dmdoc 1.4.1</a></footer>
+</body>
+</html>
